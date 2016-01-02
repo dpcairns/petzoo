@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Delete your pen 
+{% endblock %}
+
+{% block content%}
+	<div>
+		<div>
+			<form action="{{ pen.get_delete_url }}"
+				method="post">
+				{% csrf_token %}
+				<p>
+					Are you sure you want to delete {{ pen.name }}?
+				</p>
+				<a href="{{ pen.get_absolute_url }}"	
+				<button type="submit">
+					Delete Pen</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+	font-family: "Open Sans";
+	background-color: pink;
+	margin:0;
+	padding:0;
+}
+
+header {
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: 0;
+}
+
+footer{
+	font-size: 1.5em;
+	width: 100%;
+	background-color: white;
+    position:fixed;
+    bottom:0;
+}
+
+
+.content{
+	background-color: #ffcccc;
+	border: black solid 2px;
+	padding: 2em;
+	margin: 5% 15em 5em 15em;
+}
+
+a{
+	color:black;
+}
+
+a:visited{
+	color: #29293d;
+}

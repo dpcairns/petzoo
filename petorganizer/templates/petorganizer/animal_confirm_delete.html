@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Delete your animal 
+{% endblock %}
+
+{% block content%}
+	<div>
+		<div>
+			<form action="{{ zoo.get_delete_url }}"
+				method="post">
+				{% csrf_token %}
+				<p>
+					Are you sure you want to delete {{ animal.name }}?
+				</p>
+				<a href="{{ animal.get_absolute_url }}"	
+				<button type="submit">
+					Delete Animal</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

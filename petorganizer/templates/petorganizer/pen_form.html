@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Make a new pen 
+{% endblock %}
+
+{% block content%}
+	<div>
+		<div>
+			<form action="{% url 'petorganizer_pen_create' %}"
+				method="post">
+				{% csrf_token %}
+				{{  form.as_p }}
+				<button type="submit">
+					Create Pen</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

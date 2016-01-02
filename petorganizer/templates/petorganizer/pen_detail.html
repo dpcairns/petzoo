@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+{{ block.super }} | {{ pen.name }} Detail
+{% endblock %}
+
+{% block content %}
+
+
+<h2>Detailed information about the pen called {{ pen.name }}</h2>
+
+
+	<h4>This {{ pen.acreage }}-acre pen has a {{ pen.climate }} climate and is in the zoo called {{ pen.zoo }}, owned by {{ pen.zoo.owner }}. It has the following animals in it:</h4>
+			<ul>
+				{% for animal in pen.animal_set.all %}
+	
+	<li><a href="{{ animal.get_absolute_url }}"> {{animal.name}} the {{animal.species}} </a></li>
+			{% endfor %}
+
+
+	</ul>
+<a href="{{ pen.zoo.get_absolute_url }}">Go back to {{ pen.zoo.name }}.</a>
+
+{% endblock %}

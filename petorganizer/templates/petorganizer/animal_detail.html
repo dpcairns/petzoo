@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | {{ animal.name }} the {{ animal.species }} Detail
+{% endblock %}
+
+{% block content %}
+
+
+<h2>Details for this precious {{ animal.species }}</h2>
+
+<div style="text-align: center"><img src="{{ animal.img }}" alt="Here's {{ animal.name }}!" width="100" height="100"/></div>
+<ul>
+	<li>Its name is {{ animal.name }}.</li>
+
+	<li>Its favorite food is {{ animal.food }}.</li>
+
+	<li>You'll know it's nearby if you hear something go {{ animal.sound }}.</li>
+
+	<li>It uses its {{ animal.weapon }} to attack with an attach rating of {{ animal.attack }} out of 5.</li>
+
+	<li>It makes lots of {{ animal.makes }}.</li>
+
+	<li>Its speed rating is {{ animal.speed }} out of 5. </li>
+
+	<li>It thrives in a {{ animal.nat_climate }} climate.</li>
+</ul>
+
+
+	<a href="{{ animal.pen.get_absolute_url }}">Go back to {{ animal.pen.name }}.</a>
+		
+{% endblock %}

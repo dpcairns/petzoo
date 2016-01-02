@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+{{ block.super }} | Zoo List
+{% endblock %}
+
+{% block content %}
+
+
+<h2>Here is a list of all the zoos in the galaxy</h2>
+	<ul>
+		{% for zoo in zoo_list %}
+			<li>
+				<a href="{% url 'petorganizer_zoo_detail' zoo.slug %}">
+					{{ zoo.name }}</a>
+			</li>
+		{% empty %}
+			<li><em>There are no zoos.</em></li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

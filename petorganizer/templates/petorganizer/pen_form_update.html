@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Change your pen 
+{% endblock %}
+
+{% block content%}
+	<div>
+		<div>
+			<form action="{{ pen.get_update_url }}"
+				method="post">
+				{% csrf_token %}
+				{{  form.as_p }}
+				<button type="submit">
+					Update Pen</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

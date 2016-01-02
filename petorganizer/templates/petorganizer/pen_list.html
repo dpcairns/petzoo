@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Pen List
+{% endblock %}
+
+{% block content %}
+<h2>Here is a list of all the pens in the galaxy</h2>
+	<ul>
+		{% for pen in pen_list %}
+			<li>
+				<a href="{% url 'petorganizer_pen_detail' pen.slug %}">
+					{{ pen.name }}</a>
+			</li>
+		{% empty %}
+			<li><em>There are no pens in this zoo.</em></li>
+		{% endfor %}
+	</ul>
+{% endblock %} 

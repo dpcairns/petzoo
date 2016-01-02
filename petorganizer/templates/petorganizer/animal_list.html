@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% block title %}
+{{ block.super }} - Animal List
+{% endblock %}
+<h2>Animal List</h2>
+	<ul>
+		{% for animal in animal_list %}
+			<li>
+				<a href="{% url 'petorganizer_animal_detail' animal.slug %}">
+					{{ animal.name }}</a>
+			</li>
+		{% empty %}
+			<li><em>There are no animals in any pen in any zoo.</em></li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

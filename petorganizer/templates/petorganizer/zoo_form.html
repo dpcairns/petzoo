@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ block.super }} | Make a new zoo 
+{% endblock %}
+
+{% block content%}
+	<div>
+		<div>
+			<form action="{% url 'petorganizer_zoo_create' %}"
+				method="post">
+				{% csrf_token %}
+				{{  form.as_p }}
+				<button type="submit">
+					Create Zoo</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

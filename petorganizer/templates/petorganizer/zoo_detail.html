@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+{{ block.super }} | {{ zoo.name }} Detail
+{% endblock %}
+{% block content %}
+
+
+<h2>Detailed information about {{ zoo.name }} </h2>
+
+
+	<h3>This zoo is owned by {{ zoo.owner }} and has the following pens:</h3>
+	<ul> {% for pen in zoo.pen_set.all %}
+	<li> <a href="{{ pen.get_absolute_url }}">{{ pen.name }}</a></li>
+	{% endfor %}
+</ul>
+
+<a href="/">Go back to the list of all zoos in the galaxy.</a>
+
+		
+{% endblock %}
